@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Dashboard — Sanath Ekanayaka Mathematics Academy</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <nav class="navbar"><div class="container">
+    <a class="brand" href="/"><span class="sigma">∑</span> Mathematics Academy</a>
+    <button class="btn btn-outline btn-sm" id="logoutBtn">Logout</button>
+  </div></nav>
+
+  <div class="dash">
+    <aside class="dash-side">
+      <div class="who"><strong id="whoName">Student</strong><span id="whoMeta" style="font-size:.85rem"></span><br /><span id="payBadge"></span></div>
+      <nav>
+        <a data-panel="classes" class="active">📅 Live Classes</a>
+        <a data-panel="recordings">🎬 Recordings &amp; Notes</a>
+        <a data-panel="exams">📝 Exams &amp; Quizzes</a>
+        <a data-panel="results">🏆 My Results</a>
+        <a data-panel="announcements">📢 Announcements</a>
+      </nav>
+    </aside>
+
+    <main class="dash-main">
+      <div class="alert" id="dashAlert"></div>
+      <div class="notice-banner" id="payNotice" style="display:none"></div>
+      <div class="exam-timer" id="examTimer" style="display:none"></div>
+
+      <section class="panel active" id="panel-classes">
+        <h1>Upcoming Live Classes</h1>
+        <div class="grid" id="classesList"></div>
+        <h1 style="margin-top:2rem">My Attempts</h1>
+        <div id="attemptsList"></div>
+      </section>
+
+      <section class="panel" id="panel-recordings">
+        <h1>Recorded Lessons &amp; Materials</h1>
+        <div class="grid" id="recordingsList"></div>
+      </section>
+
+      <section class="panel" id="panel-exams">
+        <h1>Examinations &amp; MCQ Quizzes</h1>
+        <div class="grid" id="examsList"></div>
+      </section>
+
+      <section class="panel" id="panel-exam">
+        <h1 id="examTitle"></h1>
+        <p class="meta">Select one answer per question. The timer submits automatically when time expires.</p>
+        <div id="examBody"></div>
+      </section>
+
+      <section class="panel" id="panel-results">
+        <h1>Published Results</h1>
+        <div id="resultsList"></div>
+      </section>
+
+      <section class="panel" id="panel-announcements">
+        <h1>Announcements &amp; Notices</h1>
+        <div class="grid" id="annList"></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="viewerModal">
+    <div class="modal">
+      <h3 id="viewerTitle"></h3>
+      <div id="viewerBody"></div>
+      <div class="card-actions"><button class="btn btn-outline" id="viewerClose">Close</button></div>
+    </div>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>

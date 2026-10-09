@@ -1,0 +1,4 @@
+    const header = req.headers.authorization || '';
+    const token = header.startsWith('Bearer ')
+      ? header.slice(7)
+      : (req.query && req.query.token) || null;   // allows ?token=... for file downloads (CSV)
